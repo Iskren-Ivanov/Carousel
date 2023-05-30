@@ -2,8 +2,7 @@ const fileUpload = async (event) => {
     let uploadedPhotos = []
     try {
         if (!event) {
-            console.log(`[fileUpload] Check the props in fileUpload.`)
-            return uploadedPhotos;
+            throw new Error(`[fileUpload] Check the props in fileUpload.`);
         }
         uploadedPhotos = Array.from(event?.target?.files) || [];
         return uploadedPhotos;

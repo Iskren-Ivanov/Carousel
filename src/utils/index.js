@@ -1,12 +1,10 @@
-// Import other utility files as needed 
-// import exportImages from './lib/exportImages';
+// Import other utility files as needed  
 import executeScroll from './lib/executeScroll';
 import convertImages from './lib/convertImages';
 import convertImage from './lib/convertImage';
 import fileUpload from './lib/fileUpload';
 
-const utils = {
-    // images: exportImages,
+const utils = { 
     executeScroll,
     convertImages,
     fileUpload,

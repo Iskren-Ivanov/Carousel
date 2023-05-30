@@ -1,11 +1,10 @@
  .appContainer {
    display: flex;
    justify-content: center;
-   /* flex-direction: column; */
-
+   /* flex-direction: column; */ 
  }
 
- .inputContainer {
+ /* .inputContainer {
    display: flex;
    align-items: center;
    margin: 20px;
@@ -17,7 +16,7 @@
    border-radius: 5px;
    cursor: pointer;
    text-shadow: 1px 1px #fff;
- }
+ } */
 
  .error {
    display: flex;
@@ -38,6 +37,6 @@
  }
 
  .progressBarContainer {
-  display: flex;
-  flex-direction: column;
+   display: flex;
+   flex-direction: column;
  }

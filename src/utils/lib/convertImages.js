@@ -8,11 +8,12 @@ const convertImages = async (uploadPhotos) => {
             return editedPhoto;
         } catch (conversionError) {
             // Handle the image conversion error
-            console.error('Image conversion error:', conversionError);
+            console.error(`[convertImages] Image conversion error: ${conversionError}`,);
             // Skip the problematic image or perform any necessary actions
             return null;
         }
     }));
+    // because for problem images we return null
     return convertedPhotos.filter(photo => photo !== null);
 };
 
