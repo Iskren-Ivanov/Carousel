@@ -1,0 +1,1 @@
+export const GLOBAL_ERROR_MESSAGE = 'We have a problem with the app, sorry for the inconvenience.';

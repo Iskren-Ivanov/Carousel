@@ -1,0 +1,21 @@
+.progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.progressBarContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.progressMessage {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    border: 4px solid #3771bd;
+    border-radius: 5px;
+    padding: 5px;
+}

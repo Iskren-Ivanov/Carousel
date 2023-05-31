@@ -12,8 +12,7 @@ const Input = ({ setImg, setIsLoading, setError }) => {
             const convertedPhotos = await convertImages(uploadedPhotos);
             convertedPhotos && setImg(convertedPhotos);
         } catch (error) {
-            setError('Error occurred during image conversion.');
-            console.error('[handleChange] Error:', error);
+            setError(`[Input] In function handleChange has error: ${error}`);
         }
         setIsLoading(false);
     };

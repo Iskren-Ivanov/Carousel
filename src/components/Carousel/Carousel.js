@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Error from '../Error/Error';
+
 import utils from "../../utils/index";
 import styles from "./Carousel.module.css";
 
@@ -13,24 +15,22 @@ const Carousel = ({ images }) => {
       const index = executeScroll(deltaY, currentIndex, images.length - 1);
       setCurrentIndex(index);
     } catch (error) {
-      setError("Error occurred during scrolling.");
-      console.error("[handleWheel] Error:", error);
+      setError(`[Carousel] In function handleWheel has error: ${error}`);
     }
   };
 
-  let content;
+  let content = (
+    <div className={ styles.carousel } onWheel={ handleWheel }>
+      <LazyLoadImage
+        className={ styles.carousel_background }
+        src={ images[currentIndex].url }
+        effect="blur"
+      />
+    </div>
+  );
+
   if (error) {
-    content = <div className={styles.error}>{error}</div>;
-  } else {
-    content = (
-      <div className={styles.carousel} onWheel={handleWheel}>
-        <LazyLoadImage
-          className={styles.carousel_background}
-          src={images[currentIndex].url}
-          effect="blur"
-        />
-      </div>
-    );
+    content = <Error error={ error } />;
   }
 
   return content;

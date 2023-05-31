@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Carousel from './components/Carousel/Carousel';
 import CircularProgressBar from './components/CircularProgressBar/CircularProgressBar';
 import Input from './components/Input/Input';
+import Error from './components/Error/Error';
 import styles from './App.module.css';
 
 const App = () => {
@@ -17,23 +18,14 @@ const App = () => {
 
   if (isLoading) {
     content = (
-      <div className={ styles.progressBarContainer }>
-        <div className={ styles.progress }>
-          <CircularProgressBar />
-        </div>
-        <div>
-          Now is the best time to make a coup of coffee
-        </div>
-      </div>
+      <CircularProgressBar />
     );
   } else if (hasUploadPhotos) {
     content = <Carousel images={ photos } />;
-  } else if (error) {
-    content = (
-      <div className={ styles.error }>
-        { error }
-      </div>
-    );
+  }
+
+  if (error) {
+    content = <Error error={ error } />;
   }
 
   return (
